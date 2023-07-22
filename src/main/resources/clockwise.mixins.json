@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "dev.turtywurty.clockwise.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "clockwise.refmap.json",
+  "mixins": [],
+  "client": [],
+  "minVersion": "0.8.5"
+}
