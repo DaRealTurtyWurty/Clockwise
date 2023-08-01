@@ -1,7 +1,7 @@
 package dev.turtywurty.clockwise.client.screen.widget;
 
 import com.mojang.blaze3d.vertex.Tesselator;
-import dev.turtywurty.clockwise.client.screen.DigitalClockScreen;
+import dev.turtywurty.clockwise.client.screen.DigitalClockTimezoneScreen;
 import dev.turtywurty.clockwise.util.TimezoneLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -20,9 +20,9 @@ public class TimezoneScrollPanel extends CustomScrollPanel {
     private final List<Timezone> allTimezones = new ArrayList<>();
     private final List<Timezone> filteredTimezones = new ArrayList<>();
 
-    private final DigitalClockScreen screen;
+    private final DigitalClockTimezoneScreen screen;
 
-    public TimezoneScrollPanel(DigitalClockScreen screen, String country, int width, int height, int top, int left) {
+    public TimezoneScrollPanel(DigitalClockTimezoneScreen screen, String country, int width, int height, int top, int left) {
         super(Minecraft.getInstance(), width, height, top, left);
 
         this.screen = screen;

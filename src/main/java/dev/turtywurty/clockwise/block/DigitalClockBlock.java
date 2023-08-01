@@ -2,6 +2,7 @@ package dev.turtywurty.clockwise.block;
 
 import dev.turtywurty.clockwise.blockentity.util.TickableBlockEntity;
 import dev.turtywurty.clockwise.client.screen.DigitalClockScreen;
+import dev.turtywurty.clockwise.client.screen.DigitalClockTimezoneScreen;
 import dev.turtywurty.clockwise.init.BlockEntityInit;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;

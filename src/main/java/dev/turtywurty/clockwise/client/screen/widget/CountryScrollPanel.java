@@ -1,7 +1,7 @@
 package dev.turtywurty.clockwise.client.screen.widget;
 
 import com.mojang.blaze3d.vertex.Tesselator;
-import dev.turtywurty.clockwise.client.screen.DigitalClockScreen;
+import dev.turtywurty.clockwise.client.screen.DigitalClockTimezoneScreen;
 import dev.turtywurty.clockwise.util.TimezoneLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -14,25 +14,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CountryScrollPanel extends CustomScrollPanel {
-        private final List<String> allCountries = new ArrayList<>();
-        private final List<String> filteredCountries = new ArrayList<>();
+    private final List<String> allCountries = new ArrayList<>();
+    private final List<String> filteredCountries = new ArrayList<>();
 
-        private final DigitalClockScreen screen;
+    private final DigitalClockTimezoneScreen screen;
 
-        private String selected = "";
+    private String selected = "";
 
-        public CountryScrollPanel(DigitalClockScreen screen, int width, int height, int top, int left) {
-            super(Minecraft.getInstance(), width, height, top, left);
+    public CountryScrollPanel(DigitalClockTimezoneScreen screen, int width, int height, int top, int left) {
+        super(Minecraft.getInstance(), width, height, top, left);
 
-            this.screen = screen;
+        this.screen = screen;
 
-            TimezoneLoader.getTimezones().keySet().stream()
-                    .distinct()
-                    .sorted()
-                    .forEach(this.allCountries::add);
+        TimezoneLoader.getTimezones().keySet().stream()
+                .distinct()
+                .sorted()
+                .forEach(this.allCountries::add);
 
-            this.filteredCountries.addAll(this.allCountries);
-        }
+        this.filteredCountries.addAll(this.allCountries);
+    }
 
     @Override
     protected int getContentHeight() {
@@ -55,7 +55,7 @@ public class CountryScrollPanel extends CustomScrollPanel {
         int x = this.left + 4;
         int y = relativeY + 4 + index * 16;
 
-        if(y + 12 > this.top + this.height)
+        if (y + 12 > this.top + this.height)
             return;
 
         boolean isOver = isMouseOverEntry(mouseX, mouseY, y - 2, y + 10, this.left + 2, this.left + this.width - 2 - this.barWidth) || country.equalsIgnoreCase(this.selected);
@@ -85,7 +85,7 @@ public class CountryScrollPanel extends CustomScrollPanel {
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double scroll) {
-        if(this.filteredCountries.size() * 16 < this.height) {
+        if (this.filteredCountries.size() * 16 < this.height) {
             this.scrollDistance = 0;
             return false;
         }
@@ -96,7 +96,7 @@ public class CountryScrollPanel extends CustomScrollPanel {
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         String country = getEntryAtPosition((int) mouseX, (int) mouseY);
-        if(country != null) {
+        if (country != null) {
             this.selected = country;
             this.screen.getNextButton().active = true;
             return true;
@@ -106,7 +106,7 @@ public class CountryScrollPanel extends CustomScrollPanel {
     }
 
     public void updateEntries(String filter) {
-        if(filter.isEmpty()) {
+        if (filter.isEmpty()) {
             this.filteredCountries.clear();
             this.filteredCountries.addAll(this.allCountries);
             return;
@@ -134,10 +134,10 @@ public class CountryScrollPanel extends CustomScrollPanel {
             if (relativeY + index * 16 - scrollAmount + 16 > 0 && relativeY + index * 16 - scrollAmount < this.top + this.height + 16) {
                 int y = relativeY + 4 + index * 16;
 
-                if(y + 12 > this.top + this.height)
+                if (y + 12 > this.top + this.height)
                     continue;
 
-                if(isMouseOverEntry(mouseX, mouseY, y - 2, y + 10, this.left + 2, this.left + this.width - 2 - this.barWidth)) {
+                if (isMouseOverEntry(mouseX, mouseY, y - 2, y + 10, this.left + 2, this.left + this.width - 2 - this.barWidth)) {
                     return country;
                 }
             }
@@ -151,7 +151,7 @@ public class CountryScrollPanel extends CustomScrollPanel {
     }
 
     private static String truncate(String str, int length) {
-        if(str.length() > length) {
+        if (str.length() > length) {
             return str.substring(0, length - 3).trim() + "...";
         }
 

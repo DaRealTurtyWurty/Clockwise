@@ -1,6 +1,14 @@
 {
   "itemGroup.clockwise": "Clockwise",
   "block.clockwise.digital_clock": "Digital Clock",
-  "gui.clockwise.button.back": "Back",
-  "gui.clockwise.button.next": "Next"
+  "gui.clockwise.digital_clock.timezone.button.back": "Back",
+  "gui.clockwise.digital_clock.timezone.button.next": "Next",
+  "gui.clockwise.digital_clock": "Digital Clock",
+  "gui.clockwise.digital_clock.timezone": "Timezone",
+  "gui.clockwise.digital_clock.alarm": "Alarm",
+  "gui.clockwise.digital_clock.button.timezone": "Timezone",
+  "gui.clockwise.digital_clock.button.alarm": "Alarm",
+  "gui.clockwise.digital_clock.alarm.button.add": "Add",
+  "gui.clockwise.digital_clock.alarm.button.edit": "Edit",
+  "gui.clockwise.digital_clock.alarm.button.remove": "Remove"
 }
