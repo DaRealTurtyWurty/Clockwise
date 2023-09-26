@@ -15,7 +15,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class AddAlarmScreen extends Screen {
-    private static final Component TITLE = Component.translatable("gui." + Clockwise.MOD_ID + ".digital_clock.alarm");
+    private static final Component TITLE =
+            Component.translatable("gui." + Clockwise.MOD_ID + ".digital_clock.alarm");
 
     private final DigitalClockAlarmScreen parent;
     private final int imageWidth, imageHeight;
@@ -24,8 +25,8 @@ public class AddAlarmScreen extends Screen {
 
     private EditBox nameField;
     private DateTimeSelector dateTimeSelector;
-    private Dropdown repeatDropdown;
-    private DropdownEditBox soundSelection;
+//    private Dropdown repeatDropdown;
+//    private DropdownEditBox soundSelection;
 
     public AddAlarmScreen(DigitalClockAlarmScreen parent) {
         super(TITLE);
@@ -42,31 +43,31 @@ public class AddAlarmScreen extends Screen {
         this.leftPos = (this.width - this.imageWidth) / 2;
         this.topPos = (this.height - this.imageHeight) / 2;
 
-        this.nameField = addRenderableWidget(new EditBox(
-                this.font,
-                this.leftPos + 40,
-                this.topPos + 25,
-                this.imageWidth - 45,
-                20,
-                Component.empty()));
-
-        this.dateTimeSelector = addRenderableWidget(new DateTimeSelector(
-                this.leftPos + 40,
-                this.topPos + 65
-        ));
-
-        this.repeatDropdown = addRenderableWidget(new Dropdown(
-                this.leftPos + 40,
-                this.topPos + 90,
-                this.imageWidth - 45,
-                20
-        ));
-
-        this.soundSelection = addRenderableWidget(new DropdownEditBox(
-                this.leftPos + 40,
-                this.topPos + 115,
-                this.imageWidth - 45,
-                20
-        ));
+//        this.nameField = addRenderableWidget(new EditBox(
+//                this.font,
+//                this.leftPos + 40,
+//                this.topPos + 25,
+//                this.imageWidth - 45,
+//                20,
+//                Component.empty()));
+//
+//        this.dateTimeSelector = addRenderableWidget(new DateTimeSelector(
+//                this.leftPos + 40,
+//                this.topPos + 65
+//        ));
+//
+//        this.repeatDropdown = addRenderableWidget(new Dropdown(
+//                this.leftPos + 40,
+//                this.topPos + 90,
+//                this.imageWidth - 45,
+//                20
+//        ));
+//
+//        this.soundSelection = addRenderableWidget(new DropdownEditBox(
+//                this.leftPos + 40,
+//                this.topPos + 115,
+//                this.imageWidth - 45,
+//                20
+//        ));
     }
 }

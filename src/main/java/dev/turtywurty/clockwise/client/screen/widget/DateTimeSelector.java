@@ -6,9 +6,9 @@ import java.util.List;
 
 public class DateTimeSelector {
     private final BarrelNumberInput yearInput;
-    private final Dropdown monthInput;
-    private final Dropdown dayInput;
-    private final BarrelNumberInput hourInput, minuteInput, secondInput;
+//    private final Dropdown monthInput;
+//    private final Dropdown dayInput;
+//    private final BarrelNumberInput hourInput, minuteInput, secondInput;
 
     private final int xPos, yPos;
 
@@ -20,6 +20,7 @@ public class DateTimeSelector {
     }
 
     public List<Renderable> getWidgets() {
-        return List.of(this.yearInput, this.monthInput, this.dayInput, this.hourInput, this.minuteInput, this.secondInput);
+//        return List.of(this.yearInput, this.monthInput, this.dayInput, this.hourInput, this.minuteInput, this.secondInput);
+        return List.of();
     }
 }
